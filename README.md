@@ -19,6 +19,9 @@ This project uses the following dependencies:
 ### Usage
 Head on over to the wiki for more usage information.
 
+### Contributions
+I'm sure there will definitely be bugs, but also this tool was written to match my workflow. If there's something you would find useful feel free to submit an Issue or even a PR!
+
 ### HUGE Thanks
 Thanks to the following people for their awesome code:
 - OJ [@TheColonial](https://twitter.com/TheColonial) as I took most of his DNS code from one of his [live streams](https://www.youtube.com/watch?v=FeH2Yrw68f8)

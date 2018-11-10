@@ -388,66 +388,6 @@ func getKeyMenuItems(k *servers.Key) map[string]*MenuItem {
 	return items
 }
 
-/*
-func (m *MenuInformation) getDropperMenuItems() *MenuItems {
-	items := defaultItems()
-
-	dropperSettings := readline.NewPrefixCompleter(
-		readline.PcItem("SonarName", readline.PcItemDynamic(m.getRunningSonarNames())),
-		readline.PcItem("Filename"),
-		readline.PcItem("Lang"),
-		readline.PcItem("Format"),
-		readline.PcItem("StagingURL"),
-		readline.PcItem("UserAgent"),
-		readline.PcItem("CustomHeaders"),
-	)
-
-	items["help"].Completer = dropperSettings
-
-	items["info"] = &MenuItem{
-		Help:      "Show sonar info and settings (alias for 'show sonarinfo'",
-		Example:   "info",
-		Completer: readline.NewPrefixCompleter(),
-	}
-
-	items["show"] = &MenuItem{
-		Help:    "Show langs or formats that can be set",
-		Example: "show langs",
-		Error:   "Specify an option to show (langs,formats)",
-		Completer: readline.NewPrefixCompleter(
-			readline.PcItem("langs"),
-			readline.PcItem("formats"),
-		),
-	}
-
-	items["set"] = &MenuItem{
-		Help:      "Set a language or dropper",
-		Example:   "set Format mshta",
-		Error:     "Options to set: Filename, Lang, Format, StagingURL, UserAgent, CustomHeaders",
-		Completer: dropperSettings,
-	}
-
-	items["generate"] = &MenuItem{
-		Help:      "Generate a dropper based on the set options",
-		Example:   "generate",
-		Error:     "Error generating dropper file, are you missing required options?",
-		Completer: readline.NewPrefixCompleter(),
-	}
-
-	completer := []readline.PrefixCompleterInterface{}
-	for name, mi := range items {
-		item := readline.PcItem(name)
-		item.Children = mi.Completer.Children
-		completer = append(completer, item)
-	}
-
-	return &MenuItems{
-		MenuType:  "MainMenu",
-		Items:     items,
-		Completer: readline.NewPrefixCompleter(completer...),
-	}
-}
-*/
 //
 // Helpers
 //
@@ -464,18 +404,6 @@ func listFiles() func(string) []string {
 		return names
 	}
 }
-
-/*
-func  getModulePaths() func(string) []string {
-	return func(line string) []string {
-		var result []string
-		for _, modulePath := range m.SubInfo.ModulePaths {
-			result = append(result, strings.TrimSuffix(strings.TrimPrefix(modulePath, "modules/"), ".json"))
-		}
-		return result
-	}
-}
-*/
 
 func getSettingsAndConstraints(k *servers.Key) func(string) []string {
 	return func(line string) []string {
